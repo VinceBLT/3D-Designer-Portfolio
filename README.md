@@ -2,7 +2,7 @@
 
 💻 This is a portfolio I am working on for a jewelry 3D Designer with a minimalist and clean design. 
 
-🚀 Made with Bootstrap and wow.js for animations. 
+🚀 Made with Bootstrap and wow.js. 
 
 🔬 What you can find inside : 
 

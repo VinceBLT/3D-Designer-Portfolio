@@ -42,29 +42,25 @@ if (empty($_POST["message"])) {
 
 if (count($_SESSION) === 0) {
 
-    $from = 'david.gabriele@outlook.fr';
-    // Plusieurs destinataires
-    $to  = 'david.gabriele@outlook.fr';
+    $EmailTo = "vincent.bezault@icloud.com";
 
-    // Sujet
-    $subject = 'Nouveau message du site web';
+    $Subject = "New Message From Website";
 
-    // message
-    $msg ='
-    <html>
-     <body>
-     <h1>Nouveau message de '. $name .'</h1>
-     <p>'. $message .'</p>
-     </body>
-    </html>
-    ';
+// prepare email body text
+$Body = "";
+$Body .= "Name: ";
+$Body .= $name;
+$Body .= "\n";
+$Body .= "Email: ";
+$Body .= $email;
+$Body .= "\n";
+$Body .= "Message: ";
+$Body .= $message;
+$Body .= "\n";
 
-    // Pour envoyer un mail HTML, l'en-tête Content-type doit être défini
-    $headers[] = 'MIME-Version: 1.0';
-    $headers[] = 'Content-type: text/html; charset=iso-8859-1';
-    $headers[] = 'From: '.$from."\r\n".
-    'Reply-To: '.$from."\r\n" .
-    'X-Mailer: PHP/' . phpversion();
+
+// send email
+$success = mail($EmailTo, $Subject, $Body, "From:".$email);
 
     // Envoi
     mail($to, $subject, $msg, implode("\r\n", $headers));

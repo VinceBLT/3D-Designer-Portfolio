@@ -42,7 +42,7 @@ if (empty($_POST["message"])) {
 
 if (count($_SESSION) === 0) {
 
-    $EmailTo = "vincent.bezault@icloud.com";
+    $EmailTo = "ekdesign99@gmail.com";
 
     $Subject = "New Message From Website";
 

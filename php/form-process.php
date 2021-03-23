@@ -1,46 +1,39 @@
 <?php
-//$errorForm = [];
+
+$errorMSG = "";
 
 // NAME
 if (empty($_POST["name"])) {
-    $_SESSION["errorName"]= "Nom manquant";
+    $errorMSG = "Name is required ";
 } else {
-    $name = strip_tags($_POST["name"]);
+    $name = $_POST["name"];
 }
 
 // EMAIL
 if (empty($_POST["email"])) {
-    $_SESSION["errorEmail"]= "Email manquant";
+    $errorMSG .= "Email is required ";
 } else {
-    $email = strip_tags($_POST["email"]);
+    $email = $_POST["email"];
 }
-//mobile
+
+// MOBILE 
 if (empty($_POST["mobile"])) {
-    $_SESSION["errorMobile"]= "Téléphone manquant";
+    $errorMSG .= "Mobile is required ";
 } else {
-    $mobile = strip_tags($_POST["mobile"]);
+    $message = $_POST["mobile"];
 }
-//Type
-if (empty($_POST["Dtype"])) {
-    $_SESSION["errorDtype"]= "Type manquant";
-} else {
-    $Dtype = strip_tags($_POST["Dtype"]);
-}
+
 // MESSAGE
 if (empty($_POST["message"])) {
-    $_SESSION["errorMessage"]= "Message manquant";
+    $errorMSG .= "Message is required ";
 } else {
-    $message = strip_tags($_POST["message"]);
+    $message = $_POST["message"];
 }
 
-//if(count($errorForm) === 0) {
-//}
 
-if (count($_SESSION) === 0) {
+$EmailTo = "EKDesign99@gmail.com";
 
-    $EmailTo = "ekdesign99@gmail.com";
-
-    $Subject = "New Message From Website";
+$Subject = "New Message From Website";
 
 // prepare email body text
 $Body = "";
@@ -50,15 +43,25 @@ $Body .= "\n";
 $Body .= "Email: ";
 $Body .= $email;
 $Body .= "\n";
+$Body .= "Mobile: ";
+$Body .= $mobile;
+$Body .= "\n";
 $Body .= "Message: ";
 $Body .= $message;
 $Body .= "\n";
 
-
 // send email
 $success = mail($EmailTo, $Subject, $Body, "From:".$email);
 
-    // Envoi
-    mail($to, $subject, $msg, implode("\r\n", $headers));
+// redirect to success page
+if ($success && $errorMSG == ""){
+   echo "Message sent !";
+}else{
+    if($errorMSG == ""){
+        echo "Something went wrong :(";
+    } else {
+        echo $errorMSG;
+    }
 }
-header("Location: /contact.php");
+
+?>

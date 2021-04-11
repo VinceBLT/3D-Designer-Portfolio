@@ -764,7 +764,7 @@ a.play-video::after {
   animation: ring-ani 1.75s infinite cubic-bezier(0.66, 0, 0, 1);
   box-shadow: 0 0 0 0 rgba(12, 108, 211, 0.5);
 }
-@-webkit-keyframes ring-ani {
+@keyframes ring-ani {
   to {
     box-shadow: 0 0 0 18px rgba(12, 108, 211, 0);
   }
@@ -1424,7 +1424,6 @@ a.play-video::after {
 }
 .icon-set {
   width: 25%;
-  display: inline-block;
   float: left;
   position: relative;
 }
@@ -2535,16 +2534,16 @@ footer.ftshap:before {
   text-align: center;
 }
 .image-block1 img {
-  -webkit-box-shadow: -20px 20px 35px #dcdcdc, 20px -40px 35px #ffffff;
   box-shadow: -20px 20px 35px #dcdcdc, 20px -40px 35px #ffffff;
-  -webkit-border-radius: 8px;
+  box-shadow: -20px 20px 35px #dcdcdc, 20px -40px 35px #ffffff;
+  border-radius: 8px;
   border-radius: 8px;
   width: 100%;
 }
 .image-block img {
-  -webkit-box-shadow: -20px 20px 35px #dcdcdc, 20px -40px 35px #ffffff;
   box-shadow: -20px 20px 35px #dcdcdc, 20px -40px 35px #ffffff;
-  -webkit-border-radius: 8px;
+  box-shadow: -20px 20px 35px #dcdcdc, 20px -40px 35px #ffffff;
+  border-radius: 8px;
 }
 .wide-sblock {
   display: inline-flex;
@@ -4808,8 +4807,7 @@ h3 a {
   padding: 0;
   margin: 0;
 }
-.rpb-shop-items-img {
-}
+
 .rpb-shop-items-info {
   padding: 16px;
 }
@@ -4838,8 +4836,7 @@ h3 a {
   justify-content: space-between;
   margin-top: 20px;
 }
-.rpb-shop-inf-ll {
-}
+
 .rpb-itm-pric span.regular-prz {
   font-size: 20px;
   font-weight: 100;
@@ -5676,9 +5673,8 @@ html .pb140 {
 .text-animation {
   font-weight: bold;
   color: transparent;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-animation: hue 6s infinite linear;
+  background-clip: text;
+  animation: hue 6s infinite linear;
 }
 .bg-a {
   background-image: linear-gradient(
@@ -7170,14 +7166,14 @@ body.active-dark {
   background: #151515;
 }
 .active-dark .image-block img {
-  -webkit-box-shadow: -20px 20px 35px #101010, 20px -40px 35px #101010;
   box-shadow: -20px 20px 35px #101010, 20px -40px 35px #101010;
-  -webkit-border-radius: 8px;
+  box-shadow: -20px 20px 35px #101010, 20px -40px 35px #101010;
+  border-radius: 8px;
 }
 .active-dark .image-block1 img {
-  -webkit-box-shadow: -20px 20px 35px #151515, 20px -40px 35px #151515;
   box-shadow: -20px 20px 35px #151515, 20px -40px 35px #151515;
-  -webkit-border-radius: 8px;
+  box-shadow: -20px 20px 35px #151515, 20px -40px 35px #151515;
+  border-radius: 8px;
 }
 .active-dark .statistics-wrap {
   background: #151515;

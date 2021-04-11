@@ -55,7 +55,7 @@ $success = mail($EmailTo, $Subject, $Body, "From:".$email);
 
 // redirect to success page
 if ($success && $errorMSG == ""){
-   echo "Message sent !";
+   echo "<p> <font color=green font face='courier' size='6pt'>Message envoyé ! Nous vous recontacterons dès que possible</font> </p>";
 }else{
     if($errorMSG == ""){
         echo "Something went wrong :(";
